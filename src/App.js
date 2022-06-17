@@ -1,12 +1,11 @@
-import React from "react";
-import Users from "./components/Users";
+import React, {useState, useEffect} from "react";
 import './App.css';
+import Users from "./components/Users";
 
 function App() {
-
   return (
     <div className="App">
-        <Users/>
+        <Users />
     </div>
   );
 }
