@@ -9,6 +9,7 @@ const getUserList = createLogic({
         try {
             const {data: { users }} = await ApiClient.get('user');
             dispatch(setStateAction(FETCH_USER_ACCESS, users));
+            action.cb && action.cb('success');
         }catch (e){
             console.log(e)
         }

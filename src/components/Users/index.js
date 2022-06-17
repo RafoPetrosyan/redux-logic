@@ -4,15 +4,17 @@ import './style.css';
 import {actionMarker} from "../../store/createActions/actionMarker";
 import {FETCH_USER_REQUEST} from "../../store/actions/users";
 
+
 const Users = () => {
    const {users} = useSelector(state => state.users);
    const dispatch = useDispatch();
 
-    console.log(users)
-
     useEffect(() => {
-        dispatch(actionMarker(FETCH_USER_REQUEST))
+        dispatch(actionMarker(FETCH_USER_REQUEST, {}, (data) => {
+            console.log('data', data);
+        }));
     }, []);
+
 
     return (
         <div className='users'>
